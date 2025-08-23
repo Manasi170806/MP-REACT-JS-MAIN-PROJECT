@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Homepage = () => {
+const Home = () => {
   return (
     <div>
-      <h1 style={{ textAlign: 'center',marginTop:"20px" }}>Welcome to the Homepage</h1>
+      <h1>home</h1>
     </div>
   )
 }
 
-export default Homepage
+export default Home

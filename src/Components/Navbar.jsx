@@ -1,33 +1,46 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom"
 
-
+const linkdata = [{
+    id: 1,
+    path: "/",
+    text: "Home"
+},
+{
+    id: 2,
+    path: "/Product",
+    text: "Product"
+}, {
+    id: 3,
+    path: "/AddProduct",
+    text: "AddProduct"
+},
+{
+    id: 4,
+    path: "/Edit",
+    text: "Edit"
+},
+{
+    id: 5,
+    path: "/Login",
+    text: "Login"
+},
+]
 
 const Navbar = () => {
-  
-  const linkData = [{ id: 1, path: "/", text: "Home" },
-  { id: 2, path: "/products", text: "Products" },
-  { id: 3, path: "/Addproducts", text: "Add Products" },
-  { id: 4, path: "/Editproducts", text: "Edit Products" },
-  { id: 5, path: "/login", text: "Login" }
-
-  ]
-  return (
-    <div className="navbar">
-      {linkData.map((el) => (
-        <NavLink style={({ isActive }) => (
-          isActive ? {backgroundColor: "#0d6efd",
-          color: "#fff",
-          padding: "10px 20px",
-          borderRadius: "8px",
-          fontFamily: "Segoe UI, sans-serif",
-          fontWeight: "500"} : {color: "#333",
-          padding: "10px 20px",
-          fontFamily: "Segoe UI, sans-serif"}
-        )} key={el.id} to={el.path}>{el.text}</NavLink>
-      ))}
-    </div>
-  )
+    return (
+        <div className="Navbar">
+            {linkdata.map((el) => (
+                <div key={el.id}>
+                    <NavLink style={({ isActive }) => (isActive ? {backgroundColor:"black", color: "white", padding:"10px" } : { color: "black" })} to={el.path}>{el.text}</NavLink>
+                </div>
+            ))}
+            {/* <NavLink to={"/Home"}>Home</NavLink>
+            <NavLink to={"/Product"}>Product</NavLink>
+            <NavLink to={"/Addproduct"}>Addproduct</NavLink>
+            <NavLink to={"/Edit"}>Edit</NavLink>
+            <NavLink to={"/Login"}>Login</NavLink> */}
+        </div>
+    )
 }
 
 export default Navbar

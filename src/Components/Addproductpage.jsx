@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Addproductpage = () => {
+const Addproduct = () => {
   return (
     <div>
-      <h1 style={{ textAlign: 'center',marginTop:"20px" }}>Add Product</h1>
+      <h1>Addproduct</h1>
     </div>
   )
 }
 
-export default Addproductpage
+export default Addproduct

@@ -1,23 +1,28 @@
+// This is a productCart.jsx page code //
 import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Link } from 'react-router-dom';
 
 
-const ProductCard = ({ id, title, price, description, category, image, rating }) => {
-  return (
-    <div className='product-card'>
-        <Card className='custom-card'>
-            <Card.Img variant="top" src={image} />
-            <Card.Body>
-                <Card.Title>{title.substring(0, 20)}...</Card.Title>
-                <Card.Text>
-                    <b>Price</b> : {price}
-                </Card.Text>
-                <Button variant="primary">Add to Cart</Button>
-            </Card.Body>
-        </Card>
-    </div>
-  )
+const ProductCard = ({id, title, price, image,onDelete }) => {
+  
+    return (
+        <div className="product-card-container">
+            <Card className="product-card">
+                <Link to={`/Description/${id}`}><Card.Img variant="top" src={image} className="product-image" /></Link>
+                <Card.Body>
+                    <Card.Title className="product-title">{title.substring(0,30)+"..."}</Card.Title>
+                    <Card.Text className="product-price">{price}</Card.Text>
+                    <Button variant="primary" className="Product-button">Add to Cart</Button>
+                </Card.Body>
+                <div>
+                    <button className="Edit">Edit</button>
+                    <button className="Delete" onClick={onDelete}>Delete</button>
+                </div>
+            </Card>
+        </div>
+    )
 }
 
 export default ProductCard
